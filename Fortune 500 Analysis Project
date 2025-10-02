@@ -15,3 +15,8 @@ SELECT industry
 FROM fortune_companies
 GROUP BY industry
 ORDER BY average_PTO_industry DESC ;
+
+
+--3. [CASE]    
+SELECT company_name, employees
+FROM fortune_companies
