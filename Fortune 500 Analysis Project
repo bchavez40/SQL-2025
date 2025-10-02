@@ -1,0 +1,17 @@
+-- 1.Tina plans on raising a family in the next two years. What are top 5 technology companies when it comes to maternity leave and also provide healthcare benefits? [filter using WHERE with AND, OR, IN, or NOT IN]
+
+SELECT company_name
+, maternity_leave_weeks
+, healthcare_benefits
+FROM fortune_companies
+WHERE healthcare_benefits = 1
+ORDER BY maternity_leave_weeks DESC
+LIMIT 5;
+
+-- 2. Rank the industries based of number of PTO days. Create a column names average_PTO_industry [calculation and alias]
+
+SELECT industry
+,  ROUND(AVG(paid_time_off_days)) as average_PTO_industry
+FROM fortune_companies
+GROUP BY industry
+ORDER BY average_PTO_industry DESC ;
