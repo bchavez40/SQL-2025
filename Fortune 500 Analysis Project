@@ -17,6 +17,13 @@ GROUP BY industry
 ORDER BY average_PTO_industry DESC ;
 
 
---3. [CASE]    
-SELECT company_name, employees
-FROM fortune_companies
+--3. Label the companies by number of employees (Large, Medium, Small) [CASE]    
+SELECT company_name,
+CASE
+	WHEN employees >= 72000 THEN 'Large'
+    WHEN employees >= 2000 THEN 'Medium'
+    ELSE 'Small'
+    END AS 'Size of Company'
+  FROM fortune_companies;  
+  
+	
