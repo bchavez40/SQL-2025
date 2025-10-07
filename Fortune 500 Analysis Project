@@ -25,5 +25,11 @@ CASE
     ELSE 'Small'
     END AS 'Size of Company'
   FROM fortune_companies;  
-  
-	
+
+-- I want to work in an industry where the avg PTO is 18 days. Which industries on avg, meet this parameter?[HAVING]
+
+SELECT industry, ROUND(AVG(paid_time_off_days)) as avg_pto
+FROM fortune_companies
+GROUP BY industry
+HAVING AVG(paid_time_off_days) >= 18
+ORDER BY AVG(paid_time_off_days) DESC;
