@@ -26,7 +26,7 @@ CASE
     END AS 'Size of Company'
   FROM fortune_companies;  
 
--- I want to work in an industry where the avg PTO is 18 days. Which industries on avg, meet this parameter?[HAVING]
+-- Which industries, on avg, provide 18 days of PTO to their employees? HAVING]
 
 SELECT industry, ROUND(AVG(paid_time_off_days)) as avg_pto
 FROM fortune_companies
