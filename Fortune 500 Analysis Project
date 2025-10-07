@@ -33,3 +33,12 @@ FROM fortune_companies
 GROUP BY industry
 HAVING AVG(paid_time_off_days) >= 18
 ORDER BY AVG(paid_time_off_days) DESC;
+
+--COUNT the number of companies in each industry that DO NOT provide health insurance and list them from least to most.
+
+SELECT industry, COUNT(healthcare_benefits) as companies_not_providing_healthcare_benefits
+FROM fortune_companies
+WHERE healthcare_benefits = 0
+GROUP BY industry
+ORDER BY COUNT(healthcare_benefits) ASC;
+
